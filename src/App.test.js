@@ -1,25 +1,20 @@
-import React from "react";
-import App from "./App";
-import * as rtl from "@testing-library/react";
-
-// jest.mock("axios", () => {
-//   return {
-//     get: url => {
-//       return Promise.resolve({ data: { episodes } });
-//     }
-//   };
-// });
+import React from 'react';
+import * as rtl from '@testing-library/react';
+import App from './App';
+import { fetchShow } from './api/fetchShow';
 
 describe('App', () => {
-  let wrapper;
-
-  afterEach(rtl.cleanup);
-  beforeEach(() => {
-    wrapper = rtl.render(<App />);
+    let wrapper;
+  
+    afterEach(rtl.cleanup);
+    beforeEach(() => {
+      wrapper = rtl.render(<App />);
+    });
+  
+    it('app component displays', async () => {
+      const text = await wrapper.findByText('Select a season');
+      expect(text).toBeInTheDocument()
+    })
   });
 
-  it('app component displays', async () => {
-    const text = await wrapper.findByText('Select a season');
-    expect(text).toBeInTheDocument()
-  })
-});
+  
