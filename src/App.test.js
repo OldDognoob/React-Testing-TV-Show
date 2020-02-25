@@ -10,7 +10,7 @@ import * as rtl from "@testing-library/react";
 //   };
 // });
 
-describe("App", () => {
+describe('App', () => {
   let wrapper;
 
   afterEach(rtl.cleanup);
@@ -18,11 +18,8 @@ describe("App", () => {
     wrapper = rtl.render(<App />);
   });
 
- it("expect the app component to display", async () => {
-    const text = await wrapper.findByText("Select a season");
-    expect(text).toBeInTheDocument();
-  });
-
-   
- 
+  it('app component displays', async () => {
+    const text = await wrapper.findByText('Select a season');
+    expect(text).toBeInTheDocument()
+  })
 });
