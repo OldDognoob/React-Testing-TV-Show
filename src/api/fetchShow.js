@@ -2,14 +2,13 @@
 import axios from 'axios';
 
 
-export const fetchShow=()=>{
-    return axios 
-    .get("https://api.tvmaze.com/singlesearch/shows?q=stranger-things&embed=episodes")
-    .then(res=>{
-        return res
-    })
-    .catch(error =>{
-        console.error("error fetching data from api, error: ", error.message);
-    return error;
-    });
-};
+
+const fetchShow = () => {
+    return axios
+      .get(
+        "https://api.tvmaze.com/singlesearch/shows?q=stranger-things&embed=episodes"
+      )
+      .then(res => res);
+  };
+
+  export default fetchShow;

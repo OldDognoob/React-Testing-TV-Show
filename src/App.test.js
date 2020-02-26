@@ -1,7 +1,7 @@
 import React from 'react';
 import * as rtl from '@testing-library/react';
 import App from './App';
-import { fetchShow } from './api/fetchShow';
+import { fetchShow as mockFetchShow } from './api/fetchShow';
 
 describe('App', () => {
     let wrapper;
@@ -16,5 +16,3 @@ describe('App', () => {
       expect(text).toBeInTheDocument()
     })
   });
-
-  
